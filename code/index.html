@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mata Mosquito</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <picture>
+            <source media="(min-width: 800px)" srcset="_imagens/game.png">
+
+            <img src="_imagens/game-pq.png" alt="Logo mata mosquito">
+        </picture>
+        
+        <form>
+            <select name="seletor-dificuldade" id="seletor-dificuldade" >
+                <option value="0">- - Selecione o nível - -</option>
+                <option value="1">Normal</option>
+                <option value="2">Difícil</option>
+                <option value="3">Dark Souls</option>
+            </select>
+            <br>
+            <input type="button" value="Iniciar Jogo">
+        </form>
+    </main>
+    
+    <script src="matamoscas.js"></script>
+</body>
+</html>

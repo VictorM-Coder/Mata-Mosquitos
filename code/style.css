@@ -1,0 +1,22 @@
+@charset "utf8";
+
+body{
+    background: url(_imagens/bg.jpg) no-repeat top center;
+    background-size: cover;
+}
+
+main{
+    text-align: center;
+}
+
+#logo{
+    max-width: 400px;
+}
+
+#seletor-dificuldade{
+    width: 200px;
+    text-align: justify;
+    font: normal 1em Roboto;
+    padding: 8px;
+   
+}
