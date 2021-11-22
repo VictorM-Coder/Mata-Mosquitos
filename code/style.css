@@ -3,10 +3,14 @@
 body{
     background: url(_imagens/bg.jpg) no-repeat top center;
     background-size: cover;
+
+
+   
 }
 
 main{
     text-align: center;
+    cursor: url(_imagens/mata_mosca.cur), pointer;
 }
 
 #logo{
