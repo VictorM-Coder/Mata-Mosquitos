@@ -21,9 +21,16 @@ function play(){
 }
 
 function spawnMoquisto(){
-    /*var mosquito = document.createElement('img')
+    var mosquito = document.createElement('img')
     mosquito.setAttribute('src', '_imagens/mosca.png')
-    document.body.appendChild(mosquito)*/
+
+    mosquito.setAttribute("width", String(randomize(40, window.innerWidth/15)))
+
+    mosquito.style.position = 'absolute'
+    mosquito.style.top =  String(randomize(0, window.innerHeight - 150) + "px")
+    mosquito.style.left = String(randomize(0, window.innerWidth - 150) + "px")
+    
+    document.body.appendChild(mosquito)
 
     console.log(randomize(1, 10))
 }
