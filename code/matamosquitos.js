@@ -3,15 +3,16 @@ if(document.getElementById("btn-jogar") != null){
 }
 
 if(document.getElementById("spwam") != null){
-    document.getElementById("spwam").addEventListener('click', spawnMoquisto)
+    document.getElementById("spwam").addEventListener('click', timer)
 }
 
 var level
 
 function play(){
-    level = document.getElementById("seletor-dificuldade").value
+    var select = (document.getElementById("seletor-dificuldade"))
+    level = Number(select.options[select.selectedIndex].value)
 
-    console.log(level)
+    window.alert(level)
 
     if(level != 0){
         window.location.href = "jogo.html"
@@ -31,10 +32,6 @@ function spawnMoquisto(){
     mosquito.style.left = String(randomize(50, window.innerWidth - 200) + "px")
     
     document.body.appendChild(mosquito)
-}
-
-function timer(totalTime){
-
 }
 
 function randomize(min, max){
