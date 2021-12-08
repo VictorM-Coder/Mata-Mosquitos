@@ -1,12 +1,12 @@
-if(document.getElementById("btn-jogar") != null){
-    document.getElementById("btn-jogar").addEventListener('click', play)
-}
+var level
 
-if(document.getElementById("spwam") != null){
+if(String(window.location.href).indexOf("index.html") != -1){
+    document.getElementById("btn-jogar").addEventListener('click', play)
+
+}else if(String(window.location.href).indexOf("jogo.html") != -1){
     document.getElementById("spwam").addEventListener('click', timer)
 }
 
-var level
 
 function play(){
     var select = (document.getElementById("seletor-dificuldade"))

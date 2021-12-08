@@ -3,6 +3,7 @@ var time = setInterval(timerDecrement, 1000)
 var timer = document.getElementById('timer')
 
 timer.innerText = 15
+console.log(level)
 
 function timerDecrement(){
     timer.innerText = totalTimeInSeconds
