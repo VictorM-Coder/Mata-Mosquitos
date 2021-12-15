@@ -5,6 +5,10 @@
     padding: 0px;
 }
 
+html{
+    cursor: url(_imagens/mata_mosca.cur), pointer;
+}
+
 body{
     background: url(_imagens/bg.jpg) no-repeat top center;
     background-size: cover;
@@ -12,7 +16,8 @@ body{
 
 main{
     text-align: center;
-    cursor: url(_imagens/mata_mosca.cur), pointer;
+    display: block;
+    height: 100%;
 }
 
 div#cronometer{

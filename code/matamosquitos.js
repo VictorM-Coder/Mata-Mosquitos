@@ -1,5 +1,6 @@
 var level
 var totalTimeInSeconds = 14
+var life = 3
 
 if(String(window.location.href).indexOf("index.html") != -1){
     document.getElementById("btn-jogar").addEventListener('click', play)
@@ -44,13 +45,14 @@ function spawnMoquisto(){
     var mosquito = document.createElement('img')
     mosquito.setAttribute('src', '_imagens/mosca.png')
 
-    mosquito.setAttribute("width", String(randomize(50, window.innerWidth/15)))
+    mosquito.setAttribute("width", String(randomize(40, 70)))
 
     mosquito.style.position = 'absolute'
-    mosquito.style.top =  String(randomize(0, window.innerHeight - 150) + "px")
-    mosquito.style.left = String(randomize(50, window.innerWidth - 200) + "px")
+    mosquito.style.top =  String(randomize(0, window.innerHeight - 100) + "px")
+    mosquito.style.left = String(randomize(0, window.innerWidth - 100) + "px")
     
-    document.body.appendChild(mosquito)
+    document.getElementById("game-screen").appendChild(mosquito)
+    despawnMosquitoByTime(mosquito)
 }
 
 function randomize(min, max){
@@ -73,3 +75,16 @@ function startTime(){
         }
     }
 }
+
+function despawnMosquitoByTime(mosquito){
+
+    var time = setTimeout(function(){
+        mosquito.parentNode.removeChild(mosquito)
+
+        var hearth = document.getElementById(String("hearth" + life))
+        life--
+        hearth.setAttribute("src", '_imagens/coracao_vazio.png')
+
+    }, (3/level * 1000))
+}
+
