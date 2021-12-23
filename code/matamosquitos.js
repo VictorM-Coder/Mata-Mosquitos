@@ -53,6 +53,9 @@ function spawnMoquisto(){
     
     document.getElementById("game-screen").appendChild(mosquito)
     despawnMosquitoByTime(mosquito)
+    mosquito.onclick = function(){
+        this.remove
+    }
 }
 
 function randomize(min, max){
@@ -85,6 +88,14 @@ function despawnMosquitoByTime(mosquito){
         life--
         hearth.setAttribute("src", '_imagens/coracao_vazio.png')
 
+        testLose()
+
     }, (3/level * 1000))
 }
 
+function testLose(){
+    if(life <= 0){
+        window.location.href = 'lose.html'
+    }
+}
+    
