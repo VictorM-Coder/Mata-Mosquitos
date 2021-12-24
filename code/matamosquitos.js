@@ -6,7 +6,6 @@ if(String(window.location.href).indexOf("index.html") != -1){
     document.getElementById("btn-jogar").addEventListener('click', play)
 
 }else if(String(window.location.href).indexOf("jogo.html") != -1){
-    document.getElementById("spwam").addEventListener('click', spawnMoquisto)
 
     urlGame = String(window.location.href)
     valueLevel = urlGame.substring((urlGame.indexOf("=") + 1), (urlGame.length))
@@ -16,7 +15,11 @@ if(String(window.location.href).indexOf("index.html") != -1){
     playSpawnMosquito()
 }
 
-
+if(document.getElementById('btn-restart')){
+    document.getElementById('btn-restart').addEventListener('click', function(){
+        window.location.href = 'index.html'
+    })
+}
 function play(){
     var select = (document.getElementById("seletor-dificuldade"))
     level = Number(select.options[select.selectedIndex].value)
@@ -29,7 +32,7 @@ function play(){
 }
 
 function playSpawnMosquito(){
-    timeSpawn = setInterval(spawnMosquitoByTimer, (1000/level) * 1.5)
+    timeSpawn = setInterval(spawnMosquitoByTimer, (2000/level))
 
     function spawnMosquitoByTimer(){
         if(totalTimeInSeconds > 0){
@@ -45,7 +48,7 @@ function spawnMoquisto(){
     var mosquito = document.createElement('img')
     mosquito.setAttribute('src', '_imagens/mosca.png')
 
-    mosquito.setAttribute("width", String(randomize(40, 70)))
+    mosquito.setAttribute("width", String(randomize(50, 70)))
 
     mosquito.style.position = 'absolute'
     mosquito.style.top =  String(randomize(0, window.innerHeight - 100) + "px")
@@ -53,9 +56,12 @@ function spawnMoquisto(){
     
     document.getElementById("game-screen").appendChild(mosquito)
     despawnMosquitoByTime(mosquito)
-    mosquito.onclick = function(){
-        this.remove
-    }
+    /*mosquito.onclick = function(){
+        this.remove()*/
+
+    mosquito.addEventListener('click', function(){
+        this.remove();
+    })
 }
 
 function randomize(min, max){
@@ -75,6 +81,7 @@ function startTime(){
             totalTimeInSeconds--
         }else{
             clearInterval(time)
+            testWin()
         }
     }
 }
@@ -96,6 +103,12 @@ function despawnMosquitoByTime(mosquito){
 function testLose(){
     if(life <= 0){
         window.location.href = 'lose.html'
+    }
+}
+
+function testWin(){
+    if(totalTimeInSeconds <= 0 && life > 0){
+        window.location.href = 'win.html'
     }
 }
     

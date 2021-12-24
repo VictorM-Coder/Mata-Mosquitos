@@ -40,3 +40,15 @@ div#cronometer{
     font: normal 1em Roboto;
     padding: 8px;
 }
+
+.button{
+    font: normal normal 1.5em sans-serif;
+    padding: 5px;
+    background-color: brown;
+    color: white;
+    border-radius: 5px;
+    width: 200px;
+    display: block;
+    margin: auto;
+    margin-top: 8px;
+}
