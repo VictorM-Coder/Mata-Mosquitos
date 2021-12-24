@@ -6,7 +6,7 @@
 }
 
 html{
-    cursor: url(_imagens/mata_mosca.cur), pointer;
+    cursor: url(_imagens/mata_mosca.cur) 30 30, pointer;
 }
 
 body{

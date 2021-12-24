@@ -56,8 +56,6 @@ function spawnMoquisto(){
     
     document.getElementById("game-screen").appendChild(mosquito)
     despawnMosquitoByTime(mosquito)
-    /*mosquito.onclick = function(){
-        this.remove()*/
 
     mosquito.addEventListener('click', function(){
         this.remove();
